@@ -1,15 +1,5 @@
-  // Show a custom alert
-    //
-    function showAlert() {
-        navigator.notification.alert(
-            'You are the winner!',  // message
-            alertDismissed,         // callback
-            'Game Over',            // title
-            'Done'                  // buttonName
-        );
-    }
-    
-  	
-  
-	</script>
-	
+   //CF9 cfscript garbage collector
+   
+   	obj = createObject("java", "java.lang.System");
+	obj.gc();
+	obj.runFinalization();
