@@ -1,6 +1,5 @@
 
-
-
+// github can not handle .mxml, so resave as .mxml ext if u wish to see this code work for you.
 <?xml version="1.0" encoding="utf-8"?>
 <mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"
 				xmlns:com="com.*"  width="100%" 			height="100%"
