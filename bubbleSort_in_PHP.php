@@ -60,7 +60,7 @@ $elsecount		= 0;	// default count on else exit condition
  
 print("<br> START BUBBLE SORT W/ WHILE LOOP:  <BR>");
  
-while (!$stop) {     		// while stop is not true or equal to  false
+do {     		// while stop is not true or equal to  false
  
  	 $stop = true;  		// set stop to true so while continues
  	 
@@ -68,7 +68,7 @@ while (!$stop) {     		// while stop is not true or equal to  false
  	 				if ($debug === 1)  print($stop . " ==1 <hr>" );
  	 
  	 
- 			 
+ 	// loop  over 		 
  	 for(  $a=0; $a < ($arrlen - 1); $a++  ) {  // is a counter  up to arr len - 1
 					
 			$forCount++;
@@ -81,31 +81,41 @@ while (!$stop) {     		// while stop is not true or equal to  false
 	 			 	if ($debug === 1) print( "array values at index or key: "  .   $arr[$a] . $arr[$b]	 . "<hr>"  );  
 					if ($debug === 1) var_dump($arr); 
 	  
-	  if ($arr[$b] > $arr[$a])
-	      {  $ifCount++; 		
-	     
-	     			if ($debug === 1) print($stop . " ==  3 <hr>" );
-	           				//swap  move this code to dumb swap function later and pass a  & a+1 ANd  arr for swap and return arr
-	          		 		// for now simple
+	  // if lef element value is > right element value 
+	  if (  $arr[$a] > $arr[$b]  )
+	     {  $ifCount++; 		
+	      	     	if ($debug === 1) print($stop . " ==  3 <hr>" );
+	           	//swap  move this code to dumb swap function later and pass a  & a+1 ANd  arr for swap and return arr for now simple
 	        	$tempItem  		= $arr[a];  		// set  first array allemnt to temp for a position 1
 				$arr[a] 		= $arr[b];			// reset value  on position 2
 				$arr[b] 		= $tempItem;		// reset value on position 1
 
 			   	$stop  = true;  // because element 1 is > element 2, condition is true, so continue while statement passess over for loop
 			
-					//if ($debug === 1)  print($stop);
+				//if ($debug === 1)  print($stop);
 	     }
 	     
+	     // break for loop for this iteration of element comparison if right side is greater
+	     elseif (  $arr[$b] > $arr[$a]  )
+	      { 		$elsecount++;
+	                break;  
+	                 
+	      }   
+
+		 // break and stop if elment position 1 is > than  elment position 0
+	     elseif (  $arr[1] > $arr[0]  )
+	     { 		$elsecount++;
+	            $stop = false;   
+	      }  // when elment value to the right is not greater, cease by setting stop
 	     
-	     else
-	     
-	     { $elsecount++;
-	       $stop = false;   }  // when elment value to the right is not greater, cease by setting stop
-	     
+	     else {  };    
 	     
 	}  	// for end
 	
-} 	// while end 
+} 	// do end 
+
+while (  !$stop );    		// while stop is not true or equal to  false
+
 
 
 
